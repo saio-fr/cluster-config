@@ -1,0 +1,12 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: staging
+  labels:
+    name: memsql
+    branch: staging
+spec:
+  ports:
+  - port: 3306
+    targetPort: 3306
+    protocol: TCP

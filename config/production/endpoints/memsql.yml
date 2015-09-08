@@ -1,0 +1,9 @@
+kind: Endpoints
+apiVersion: v1
+metadata:
+  name: memsql
+  subsets:
+    addresses:
+      IP: 10.240.21.210
+      ports:
+        port: 3306

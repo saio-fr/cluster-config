@@ -2,8 +2,16 @@ kind: Endpoints
 apiVersion: v1
 metadata:
   name: memsql
-  subsets:
-    addresses:
-      IP: 10.240.21.210
-      ports:
-        port: 3306
+  labels:
+    name: memsql
+    branch: master
+subsets:
+- addresses:
+  - IP: 10.240.21.210
+  ports:
+  - port: 3306
+    protocol: TCP
+    name: sql
+  - port: 9000
+    protocol: TCP
+    name: op
